@@ -1,0 +1,625 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "version": "0.0.2",
+    "title": "PT-X H2H API"
+  },
+  "servers": [
+    {
+      "url": "https://api.ptx.xyz",
+      "description": "Production Server (Live Data)"
+    },
+    {
+      "url": "https://sandbox.ptx.xyz",
+      "description": "Sandbox Server (Test Data)"
+    },
+    {
+      "url": "https://api.test.ptx.xyz",
+      "description": "Developer Server (Test Data)"
+    }
+  ],
+  "paths": {
+    "/topup": {
+      "post": {
+        "security": [
+          {
+            "oAuth": [
+              "request:topup"
+            ]
+          }
+        ],
+        "summary": "Send Topup Request",
+        "operationId": "requestTopup",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TopupRequest"
+              },
+              "example": {
+                "customer_name": "Ms. Dave Cummings",
+                "nominal": 1000000
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/TopupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Topup Request Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopupObject"
+                },
+                "example": {
+                  "slug": "xK9UUNnT-JOp",
+                  "nominal": "1000000.00",
+                  "ref_code": null,
+                  "customer_name": "Ms. Dave Cummings",
+                  "customer_email": null,
+                  "mode": "va",
+                  "invoice_data": {
+                    "bank": "Permata Va",
+                    "account": "7192920210906772",
+                    "name": "FASAPAY MS. DAVE CUM",
+                    "howto": "",
+                    "amount": "1002500.00"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Topup Request Rejected",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/topup/{slug}": {
+      "get": {
+        "security": [
+          {
+            "oAuth": [
+              "request:topup"
+            ]
+          }
+        ],
+        "summary": "Get Topup Detail By Slug",
+        "description": "Get Detail of Specific Topup by using its slug\n",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The Topup Slug (case sensitive)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Topup Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopupObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/topup/": {
+      "get": {
+        "security": [
+          {
+            "oAuth": [
+              "request:topup"
+            ]
+          }
+        ],
+        "summary": "Get Topup Detail By Reference Code",
+        "description": "Get Detail of Specific Topup by using its reference Code\nwhen using `ref_code` if more than one Record is found only the latest one will be returned\n",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ref_code",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "The Reference Code"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Topup Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopupObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/balance": {
+      "get": {
+        "security": [
+          {
+            "oAuth": [
+              "read:balance"
+            ]
+          }
+        ],
+        "summary": "Get Wallet Data",
+        "operationId": "getBalance",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "in",
+                    "out",
+                    "balance"
+                  ],
+                  "properties": {
+                    "in": {
+                      "description": "Total IN Amount",
+                      "type": "string",
+                      "format": "number"
+                    },
+                    "out": {
+                      "description": "Total OUT Amount",
+                      "type": "string",
+                      "format": "number"
+                    },
+                    "balance": {
+                      "description": "Current Balance",
+                      "type": "string",
+                      "format": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/history/topup": {
+      "get": {
+        "security": [
+          {
+            "oAuth": [
+              "read:history"
+            ]
+          }
+        ],
+        "description": "Get History Data",
+        "operationId": "getHistoryTopup",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "description": "History Page Number"
+          },
+          {
+            "in": "query",
+            "name": "ref_code",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search Topup History by Reference Code (exact match)"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "PENDING",
+                "PAID",
+                "FINISH"
+              ]
+            },
+            "description": "Search Topup History by Status"
+          },
+          {
+            "in": "query",
+            "name": "customer_name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search Topup History by Customer Name (partial match)"
+          },
+          {
+            "in": "query",
+            "name": "customer_email",
+            "schema": {
+              "type": "string",
+              "format": "email"
+            },
+            "description": "Search Topup History by Customer Email (exact match)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Topup Data",
+            "headers": {
+              "X-Pagination-Total-Count": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Total Count of Data Found"
+                }
+              },
+              "X-Pagination-Page-Count": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Total Number of Page Available"
+                }
+              },
+              "X-Pagination-Per-Page": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Count Per Page"
+                }
+              },
+              "X-Pagination-Current-Page": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Page Number"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TopupObject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/history/wallet": {
+      "get": {
+        "security": [
+          {
+            "oAuth": [
+              "read:history"
+            ]
+          }
+        ],
+        "description": "Get History Data",
+        "operationId": "getHistoryTopup",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "description": "History Page Number"
+          },
+          {
+            "in": "query",
+            "name": "ref_code",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search Topup History by Reference Code (exact match)"
+          },
+          {
+            "in": "query",
+            "name": "customer_name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search Topup History by Customer Name (partial match)"
+          },
+          {
+            "in": "query",
+            "name": "customer_email",
+            "schema": {
+              "type": "string",
+              "format": "email"
+            },
+            "description": "Search Topup History by Customer Email (exact match)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Wallet Data",
+            "headers": {
+              "X-Pagination-Total-Count": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Total Count of Data Found"
+                }
+              },
+              "X-Pagination-Page-Count": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Total Number of Page Available"
+                }
+              },
+              "X-Pagination-Per-Page": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Count Per Page"
+                }
+              },
+              "X-Pagination-Current-Page": {
+                "schema": {
+                  "type": "integer",
+                  "description": "The Page Number"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LedgerObject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TopupRequest": {
+        "type": "object",
+        "required": [
+          "customer_name",
+          "nominal"
+        ],
+        "properties": {
+          "customer_name": {
+            "description": "Customer Name",
+            "type": "string"
+          },
+          "customer_email": {
+            "description": "Customer Email",
+            "type": "string",
+            "format": "email"
+          },
+          "nominal": {
+            "description": "Topup Nominal",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "number"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "ref_code": {
+            "description": "Reference Code for Merchant Tracking",
+            "type": "string",
+            "maxLength": 128
+          },
+          "note": {
+            "description": "Transaction Note",
+            "type": "string"
+          },
+          "mode": {
+            "description": "Topup Mode. default to 'va' if `null` or not defined",
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "va",
+              "qris",
+              null
+            ]
+          },
+          "callback_url": {
+            "description": "Custom Callback URL. Default to What defined in API",
+            "type": "string",
+            "format": "url"
+          },
+          "callback_type": {
+            "description": "Callback Data Format. Default to `form` if not defined",
+            "type": "string",
+            "enum": [
+              "json",
+              "form"
+            ]
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "error"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "error": {
+            "oneOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "array"
+              }
+            ]
+          }
+        }
+      },
+      "TopupObject": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "Unique Transaction Identity"
+          },
+          "nominal": {
+            "type": "string",
+            "format": "number",
+            "description": "Topup Nominal"
+          },
+          "ref_code": {
+            "type": "string",
+            "description": "Reference Code"
+          },
+          "customer_name": {
+            "type": "string"
+          },
+          "customer_email": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of The Topup * `PENDING` - Topup Request is Created and Waiting for Payment * `PAID` - Topup Request is Paid and Waiting for Processing * `FINISH` - Topup Request is Processed and Wallet Balance Updated\n",
+            "enum": [
+              "PENDING",
+              "PAID",
+              "FINISH"
+            ]
+          },
+          "invoice_data": {
+            "type": "object",
+            "description": "The Payment that need to be done",
+            "properties": {
+              "bank": {
+                "type": "string",
+                "description": "Bank Name"
+              },
+              "account": {
+                "type": "string",
+                "description": "Bank Account Number"
+              },
+              "name": {
+                "type": "string",
+                "description": "Account Owner Name"
+              },
+              "howto": {
+                "type": "string",
+                "description": "Link to How to Pay Tutorial"
+              },
+              "amount": {
+                "type": "string",
+                "description": "Amount that has to be paid"
+              }
+            }
+          }
+        }
+      },
+      "LedgerObject": {
+        "type": "object",
+        "description": "The Ledger/Wallet Data",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "Unique Transaction Identity"
+          },
+          "nominal": {
+            "type": "string",
+            "format": "number",
+            "description": "Ledger Nominal"
+          },
+          "fee": {
+            "type": "string",
+            "format": "number",
+            "description": "Transaction Fee"
+          },
+          "balance": {
+            "type": "string",
+            "format": "number",
+            "description": "The Resulting Balance when the transaction finish"
+          },
+          "ref_code": {
+            "type": "string",
+            "description": "Reference Code"
+          },
+          "customer_name": {
+            "type": "string"
+          },
+          "customer_email": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer",
+            "description": "Unix Timestamp when the Data Inputed"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oAuth": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "/auth/token",
+            "refreshUrl": "/auth/refresh",
+            "scopes": {
+              "request:topup": "Request Topup Data using VA or QRIS",
+              "request:withdraw": "Request Withdraw",
+              "read:balance": "Read Current Balance",
+              "read:history": "Read Transaction History"
+            }
+          }
+        }
+      }
+    }
+  }
+}
