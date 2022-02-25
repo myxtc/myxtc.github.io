@@ -1,0 +1,17 @@
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background: #0a3d62;  /* fallback for old browsers */
+  background: linear-gradient(rgb(72, 109, 157,0.8), rgb(68, 122, 125,0.8)), url("../img/home-bg.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(rgb(72, 109, 157,0.8), rgb(68, 122, 125,0.8)), url("../img/home-bg.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
