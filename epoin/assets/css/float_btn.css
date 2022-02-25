@@ -1,0 +1,42 @@
+.float{
+	position:fixed;
+	width:48px;
+	height:48px;
+	bottom:390px;
+	right:14px;
+	color:green;
+	border-radius:5px;
+	text-align:center;
+	box-shadow: 2px 2px 6px #000;
+	font-size: 16px;
+	background: #fff;
+    background-size: cover;
+}
+.float2{
+	position:fixed;
+	width:58px;
+	height:38px;
+	padding: 2px;
+	bottom:420px;
+	right:10px;
+	font-size: 10px;
+}
+
+.float3{
+	position:fixed;
+	width:48px;
+	height:48px;
+	bottom:340px;
+	right:14px;
+	color:	#3b5998;
+	border-radius:5px;
+	text-align:center;
+	box-shadow: 2px 2px 6px #000;
+	font-size: 16px;
+	background: #fff;
+    background-size: cover;
+}
+
+.my-float{
+	margin-top:8px;
+}
