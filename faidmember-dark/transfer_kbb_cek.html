@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fasapay ID - Sistem Pembayaran Online - Member Area</title>
+
+    <!-- Vendor CSS -->
+    <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/sweetalert/dist/sweetalert.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/app_1.min.css" rel="stylesheet">
+    <link href="css/app_2.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <ul class="h-inner">
+            <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                <div class="line-wrap ">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+
+            <li class="pull-left">
+                <ul class="hi-menu">
+                    <li><a href="index.html" class="m-l-10"><img src="img/fasapay_logo.png" alt="" width="120px"></a></li>
+                    <li class="drop-down p-l-25 p-t-5 hidden-xs">
+                        <a href="" data-toggle="tooltip" data-placement="bottom" title="Notifikasi">
+                            <i class="zmdi zmdi-globe-alt f-17"></i>
+                        </a>
+                    </li>
+                    <li class="p-l-25 p-t-5 hidden-xs"><a href="" > <i class="zmdi zmdi-account f-17"></i> &nbsp; FI50528 | Aktif</a></li>
+                </ul>
+            </li>
+
+            <li class="pull-right">
+                <ul class="hi-menu">
+                    <li class="p-l-25 hidden-xs p-t-5"><a href="" data-toggle="tooltip" data-placement="bottom" title="Bahasa"> <img src="img/flags/Indonesia.png" alt="" width="16px"></a></li>
+                    <li class="p-r-25 hidden-xs p-t-5"><a href="" data-toggle="tooltip" data-placement="bottom" title="English"> <img src="img/flags/United_Kingdom.png" alt="" width="16px"></a></li>
+                    <li class="hidden-xs p-t-5"><a href="" >Login Terakhir : 4 Juli 1990 09.39</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <section id="main">
+        <aside id="sidebar" class="sidebar c-overflow">
+            <ul class="main-menu">
+                <li class="active">
+                    <a href="index.html"><i class="zmdi zmdi-home c-cyan"></i> Depan</a>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-account-box"></i> Akun dan Keanggotaan</a>
+
+                    <ul>
+                        <li><a href="profil.html"><i class="fas fa-user"></i> Profil</a></li>
+                        <li><a href="upload_id.html"><i class="fas fa-camera"></i> Upload Identitas</a></li>
+                        <li><a href="upload_doc.html"><i class="fas fa-upload"></i> Upload Dokumen</a></li>
+                        <li><a href="bankfavorit.html"><i class="fas fa-landmark"></i> Bank</a></li>
+                        <li><a href="referral.html"><i class="fas fa-sitemap"></i> Referral</a></li>
+                        <li><a href="testimoni.html"><i class="fas fa-comment"></i> Testimonial</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-settings"></i> Keamanan Akun</a>
+
+                    <ul>
+                        <li><a href="securitycenter.html"><i class="fas fa-dharmachakra"></i> Security Center</a></li>
+                        <li><a href="pinlogin.html"><i class="fas fa-dice-one"></i> Pin Login</a></li>
+                        <li><a href="pintrans.html"><i class="fas fa-dice-two"></i> Pin Transaksi</a></li>
+                        <li><a href="c_pwd.html"><i class="fas fa-edit"></i> Ubah Password</a></li>                        
+                        <li><a href="acc_activity.html"><i class="fas fa-poll"></i> Aktivitas Akun</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="zmdi zmdi-time-restore c-red"></i> Logout</a></li>
+            </ul>
+            <div class="m-t-25 m-b-25"></div>
+            <div class="m-l-20">
+                <a href="#" class="btn btn-info">Live Chat</a>
+                <a href="#" class="btn btn-info m-l-20">Skype Chat</a>
+            </div>
+            <div class="m-t-25 m-b-25"></div>
+        </aside>
+
+        <section id="content">
+            <div class="container">                
+                <div class="card">
+                    <div class="bgm-bluegray p-5">
+                        <h4 class="p-l-10"><i class="fas fa-star c-amber"></i> Konfirmasi Transfer ke Banyak Bank</h4>
+                    </div>
+                    <div class="m-b-10"></div>
+                    <div class="row">                    
+                        <div class="col-sm-12 ">
+                            <div class="bgm-bluegray p-5">
+                                <span class="p-l-10 f-14"></i> Daftar Penerima</span>
+                            </div>
+                            <div class="card-body bgm-yellow p-10">
+                                <span class="p-l-10 c-black">Anda memiliki</span> <span class="c-red">3 transaksi <a class="c-red" data-toggle="collapse" href="#datapenerima" aria-expanded="false" aria-controls="datapenerima">
+                                    (Lihat Detail)
+                                </a></span> 
+                            </div>
+                            <div class="card-body table-responsive collapse" id="datapenerima">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nama Penerima</th>
+                                            <th>Bank Penerima</th>
+                                            <th>Nomor Rekening</th>
+                                            <th>Email</th>
+                                            <th>Berita Transfer</th>
+                                            <th>Nominal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Alexandra</td>
+                                            <td>BCA</td>
+                                            <td>07638829933</td>
+                                            <td>alexandra@gmail.com</td>
+                                            <td>Gaji bulan mei</td>
+                                            <td>Rp 20000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Madeleine</td>
+                                            <td>BNI</td>
+                                            <td>54652452344</td>
+                                            <td>madeleine@yahoo.com</td>
+                                            <td>Gaji bulan mei</td>
+                                            <td>Rp 10000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Roxxane</td>
+                                            <td>BRI</td>
+                                            <td>4234542348</td>
+                                            <td>roxxane@yahoo.com</td>
+                                            <td>Gaji bulan mei</td>
+                                            <td>Rp 30000</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span class=" c-white"><strong>Sub Total</strong></span>
+                                            </td>
+                                            <td class="c-yellow"><strong>Rp 50000</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="bgm-bluegray p-5">
+                                <span class="p-l-10 f-14"></i> Rincian Transfer</span>
+                            </div>
+                            <table class="table">
+                                <tr>
+                                    <td><span class="f-700 c-cyan">Batch Number</span></td>
+                                    <td>MT21039123912</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="f-700 c-cyan">Sub Total</span></td>
+                                    <td>Rp 50000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="f-700 c-cyan">Biaya Administrasi</span></td>
+                                    <td>Rp 500</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="f-700 c-cyan">Kode Unik</span></td>
+                                    <td>Rp 12</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="f-700 c-cyan">Total Transfer</span></td>
+                                    <td>Rp 50512</td>
+                                </tr>    
+                            </table>
+
+                            <div class="checkbox m-25">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    <i class="input-helper"></i>
+                                    Saya sudah membaca dengan teliti dan menyatakan bahwa data di atas sudah benar
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10 m-25">
+                                    <a href="transfer_kbb_mnl.html" class="btn bgm-amber btn-sm"><i class="fa fa-reply c-black"></i> Kembali</a>
+                                    <a href="transfer_kbb_r.html" class="btn btn-primary btn-sm"><i class="fa fa-thumbs-up c-yellow"></i> Konfirmasi</a>
+                                </div>
+                            </div>  
+                        </div>                                        
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer id="footer">
+        Copyright &copy; 2018 Fasapay Indonesia
+
+        <ul class="f-menu">
+            <li><a href="">Kebijakan</a></li>
+            <li><a href="">Kerahasiaan</a></li>
+            <li><a href="">Pencegahan Penipuan</a></li>
+            <li><a href="">Perlindungan Pembeli</a></li>
+            <li><a href="">Perlindungan Penjual</a></li>
+        </ul>
+    </footer>
+
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+
+    <!-- Javascript Libraries -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

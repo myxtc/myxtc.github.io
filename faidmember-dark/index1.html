@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fasapay ID - Sistem Pembayaran Online - Member Area</title>
+
+    <!-- Vendor CSS -->
+    <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/sweetalert/dist/sweetalert.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/app_1.min.css" rel="stylesheet">
+    <link href="css/app_2.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <ul class="h-inner">
+            <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                <div class="line-wrap ">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+
+            <li class="pull-left">
+                <ul class="hi-menu">
+                    <li><a href="index.html" class="m-l-10"><img src="img/fasapay_logo.png" alt="" width="120px"></a></li>
+                    <li class="drop-down p-l-25 p-t-5 hidden-xs">
+                        <a href="" data-toggle="tooltip" data-placement="bottom" title="Notifikasi">
+                            <i class="zmdi zmdi-globe-alt f-17"></i>
+                        </a>
+                    </li>
+                    <li class="p-l-25 p-t-5 hidden-xs"><a href=""> <i class="zmdi zmdi-account f-17"></i> &nbsp; FI50528 | Aktif</a></li>
+                </ul>
+            </li>
+
+            <li class="pull-right">
+                <ul class="hi-menu">
+                    <li class="p-l-25 show-xs p-t-5"><a href="" data-toggle="tooltip" data-placement="bottom" title="Bahasa"> <img src="img/flags/Indonesia.png" alt="" width="16px"></a></li>
+                    <li class="p-r-25 show-xs p-t-5"><a href="" data-toggle="tooltip" data-placement="bottom" title="English"> <img src="img/flags/United_Kingdom.png" alt="" width="16px"></a></li>
+                    <li class="hidden-xs p-t-5"><a href="">Login Terakhir : 4 Juli 1990 09.39</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <section id="main">
+        <aside id="sidebar" class="sidebar c-overflow">
+            <ul class="main-menu">
+                <li class="mm-profile">
+                    <a href="#" class="media">
+                        <img class="pull-left" src="img/2.jpg" alt="">
+                        <div class="media-body">
+                            Dargombez Junior
+                            <br><span> FI50528 </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <div class="card">
+                        <div class="card-header bgm-black">
+                            <span class="c-orange f-500">Fasa Cash</span> : <span class="pull-right">100.000 <span class="f-700 c-orange">IDR</span>  </span>
+                            <br><span class="c-blue f-500">Fasa Poin</span> : <span class="pull-right">5 <span class="f-700 c-blue">pts</span></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="index.html"><i class="zmdi zmdi-home c-cyan"></i> Depan</a>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-balance-wallet"></i> Transaksi</a>
+
+                    <ul>
+                        <li><a href="topup.html"><i class="fas fa-arrow-circle-up"></i> Top Up</a></li>
+                        <li class="sub-menu">
+                        <li><a href="transfer_f2f.html"><i class="fas fa-star-of-david"></i> Transfer Fasa Ke Fasa</a></li>
+                        <li><a href="transfer_f2b.html"><i class="fas fa-star-half-alt"></i> Transfer Fasa Ke Bank</a></li>
+                        <li><a href="transfer_b2b.html"><i class="fas fa-star"></i> Transfer Bank ke Bank</a></li>
+                        <li>
+                        <li><a href="withdraw.html"><i class="fas fa-arrow-circle-down"></i> Tarik Dana</a></li>
+                        <li>
+                        <li><a href="refund.html"><i class="fas fa-redo-alt"></i> Refund</a></li>
+                    </ul>
+                </li> 
+                <li >
+                    <a href="payment.html"><i class="zmdi zmdi-local-mall"></i> Pembayaran</a>
+                </li>                               
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="fas fa-balance-scale"></i> History</a>
+                    <ul>
+                        <li><a href="historytrans_master.html"><i class="fas fa-th-list"></i> History Transaksi</a></li>
+                        <li><a href="historytrans.html"><i class="fas fa-shopping-cart"></i> History Pembayaran</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="promo.html"><i class="zmdi zmdi-card-giftcard"></i> Promo <span class="label label-danger pull-right">New</span></a>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-account-box"></i> Akun dan Keanggotaan</a>
+
+                    <ul>
+                        <li><a href="profil.html"><i class="fas fa-user"></i> Profil</a></li>
+                        <li><a href="upload_id.html"><i class="fas fa-camera"></i> Upload Identitas</a></li>
+                        <li><a href="upload_doc.html"><i class="fas fa-upload"></i> Upload Dokumen</a></li>
+                        <li><a href="bankfavorit.html"><i class="fas fa-landmark"></i> Bank</a></li>
+                        <li><a href="referral.html"><i class="fas fa-sitemap"></i> Referral</a></li>
+                        <li><a href="testimoni.html"><i class="fas fa-comment"></i> Testimonial</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-settings"></i> Keamanan Akun</a>
+
+                    <ul>
+                        <li><a href="securitycenter.html"><i class="fas fa-dharmachakra"></i> Security Center</a></li>
+                        <li><a href="pinlogin.html"><i class="fas fa-dice-one"></i> Pin Login</a></li>
+                        <li><a href="pintrans.html"><i class="fas fa-dice-two"></i> Pin Transaksi</a></li>
+                        <li><a href="c_pwd.html"><i class="fas fa-edit"></i> Ubah Password</a></li>                        
+                        <li><a href="acc_activity.html"><i class="fas fa-poll"></i> Aktivitas Akun</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-devices"></i> Akun Akses</a>
+                    <ul>
+                        <li><a href="apiguide.html"><i class="fas fa-laptop"></i> Panduan API</a></li>
+                        <li><a href="acc_api.html"><i class="fas fa-laptop-code"></i> Akun API</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-store"></i> Peralatan Merchant</a>
+
+                    <ul>
+                        <li><a href="m_invoice.html"><i class="fas fa-money-check"></i> Manage Invoice</a></li>
+                        <li><a href="sci_guide.html"><i class="fas fa-dolly"></i> Panduan SCI</a></li>
+                        <li><a href="sci_sandbox_guide.html"><i class="fas fa-dolly-flatbed"></i> Panduan SCI Sandbox</a></li>
+                        <li><a href="form_generator.html"><i class="fas fa-file-alt"></i> Form Generator</a></li>
+                        <li><a href="donation_btn.html"><i class="fas fa-ad"></i> Tombol Donasi Generator</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="zmdi zmdi-time-restore c-red"></i> Logout</a></li>
+            </ul>
+            <div class="m-t-25 m-b-25"></div>
+            <div class="m-l-20">
+                <a href="#" class="btn btn-info">Live Chat</a>
+                <a href="#" class="btn btn-info m-l-20">Skype Chat</a>
+            </div>
+            <div class="m-t-25 m-b-25"></div>
+        </aside>
+
+        <section id="content">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body p-10">
+                        <div>
+                            <h1><i class="zmdi zmdi-alert-circle-o"></i> Security Alert!</h1>
+                        </div>
+                        <div class="m-t-25 m-b-25"></div>
+                        <p>Kami melihat bahwa keamanan akun anda belum maksimal. silahkan aktifkan fitur-fitur berikut agar akun anda lebih aman.</p>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+                                <span class="sr-only">15% Complete</span>
+                            </div>
+                        </div>
+                        <div class="m-t-20 m-b-20"></div>
+                        <div class="row">
+                            <div class="col-sm-4 m-t-5 m-b-5">
+                                <div class="card-header text-center bgm-bluegray">
+                                    <h2>Pin Login Web</h2>
+                                </div>
+                                <div class="card-body card-padding  text-justify" style="border:1px solid gray;">
+                                    <strong>PIN LOGIN WEB</strong>, adalah sandi tambahan yang ditanyakan saat LOGIN ke FasaPay Member Area. Aktifkan PIN ini agar akun anda terlindungi.
+                                    <div class="text-center p-t-25">
+                                        <a href="pinlogin.html" class="btn btn-primary">Setup Pin Login</a> 
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="col-sm-4 m-t-5 m-b-5">
+                                <div class="card-header text-center bgm-bluegray">
+                                    <h2>Pin Login SCI</h2>
+                                </div>
+                                <div class="card-body card-padding text-justify" style="border:1px solid gray;">
+                                    <strong>PIN LOGIN SCI</strong>, adalah sandi tambahan yang ditanyakan saat LOGIN melalui SCI FasaPay. Aktifkan PIN ini agar akun anda terlindungi.
+                                    <div class="text-center p-t-25">
+                                        <a href="pinlogin.html" class="btn btn-primary">Setup Pin SCI</a>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="col-sm-4 m-t-5 m-b-5">
+                                <div class="card-header text-center bgm-bluegray">
+                                    <h2>Pin Transaksi</h2>
+                                </div>
+                                <div class="card-body card-padding text-justify" style="border:1px solid gray;">
+                                    <strong>PIN TRANSAKSI</strong>, adalah sandi tambahan yang ditanyakan saat melakukan transaksi transfer. Aktifkan PIN ini agar dana anda terlindungi.
+                                    <div class="text-center p-t-25">
+                                        <a href="pintrans_a.html" class="btn btn-primary">Setup Pin Transaksi</a>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>Selamat Datang di Website Fasapay</h1> 
+                <p class="text-justify f-300"> Anda dapat melakukan transaksi di menu khusus Anggota FasaPay ini. Untuk Deposit dan Withdraw mohon memperhatikan jam layanan di FasaPay.com demi kemudahan dan kelancaran transaksi anda.</p>
+                <h1>Informasi Terbaru</h1>
+                <div class="card">
+                    <div class="card-body p-10 f-300">
+                        <h2>Pengumuman Jam Layanan Selama Hari Raya Idul Fitri 1439 H</h2> Dalam rangka memperingati Hari Raya Idul Fitri 1439 H, berikut kami informasikan mengenai jam layanan di FasaPay Indonesia :
+                        <ol class="text-justify">
+                            <li>FasaPay Indonesia hanya akan melayani transaksi Top-Up dan Redeem melalui bank transfer ke sesama bank pada Hari Senin-Selasa, Tanggal 11-12 Juni 2018 dan Rabu, Tanggal 20 Juni 2018. Transaksi Top-Up dan Redeem melalui bank transfer ke beda bank akan kembali dilayani secara normal sesuai antrian di jam layanan FasaPay Indonesia pada Hari Kamis, Tanggal 21 Juni 2018.</li>
+                            <li>Layanan Support FasaPay Indonesia pada Hari Selasa, Tanggal 12 Juni 2018 hanya akan beroperasional pada jam 09.00 – 17.00 WIB. FasaPay Indonesia hanya akan melayani transaksi Top-Up dan Redeem melalui bank transfer sesuai dengan jam layanan pada hari tersebut.</li>
+                            <li>FasaPay Indonesia tidak melayani transaksi Top-Up dan Redeem melalui bank transfer pada hari Rabu-Selasa, Tanggal 13-19 Juni 2018. Transaksi Top-Up menggunakan BCA KlikPay dan Mandiri Virtual Account tetap bisa digunakan seperti biasa. Namun, sebagai informasi tambahan, apabila terjadi error pada BCA KlikPay dan Mandiri Virtual Account maka konfirmasi transaksi akan dilayani pada Hari Kamis, Tanggal 21 Juni 2018.</li>
+                        </ol>
+                        <p>Terima kasih atas perhatian Bapak/Ibu dan semoga hari Bapak/Ibu menyenangkan.</p>
+                    </div>
+                </div>
+                <h1>5 Transaksi Terakhir</h1>
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th><a href=""> Tanggal</a></th>
+                                    <th><a href=""> Nomor Referensi</a></th>
+                                    <th><a href=""> Jenis Transaksi</a></th>
+                                    <th><a href=""> Mata Uang</a></th>
+                                    <th><a href=""> Fee</a></th>
+                                    <th>Dana Masuk</th>
+                                    <th>Dana Keluar</th>
+                                    <th><a href=""> Status</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10/7/2018</td>
+                                    <td>TR1212541234</td>
+                                    <td>Transfer</td>
+                                    <td>IDR</td>
+                                    <td>3500</td>
+                                    <td>0</td>
+                                    <td>1000000</td>
+                                    <td>Finish</td>
+                                </tr>
+                                <tr>
+                                    <td>10/7/2018</td>
+                                    <td>TR1212541234</td>
+                                    <td>Transfer</td>
+                                    <td>IDR</td>
+                                    <td>3500</td>
+                                    <td>0</td>
+                                    <td>1000000</td>
+                                    <td>Finish</td>
+                                </tr>
+                                <tr>
+                                    <td>10/7/2018</td>
+                                    <td>TR1212541234</td>
+                                    <td>Transfer</td>
+                                    <td>IDR</td>
+                                    <td>3500</td>
+                                    <td>0</td>
+                                    <td>1000000</td>                                        
+                                    <td>Finish</td>
+                                </tr>
+                                <tr>
+                                    <td>10/7/2018</td>
+                                    <td>TR1212541234</td>
+                                    <td>Transfer</td>
+                                    <td>IDR</td>
+                                    <td>3500</td>
+                                    <td>0</td>
+                                    <td>1000000</td>
+                                    <td>Finish</td>
+                                </tr>
+                                <tr>
+                                    <td>10/7/2018</td>
+                                    <td>TR1212541234</td>
+                                    <td>Transfer</td>
+                                    <td>IDR</td>
+                                    <td>3500</td>
+                                    <td>0</td>
+                                    <td>1000000</td>
+                                    <td>Finish</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-20">
+                        <p class="f-11 f-300">(Geser Kiri Untuk versi mobile)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer id="footer">
+        Copyright &copy; 2018 Fasapay Indonesia
+
+        <ul class="f-menu">
+            <li><a href="#">Kebijakan</a></li>
+            <li><a href="#">Kerahasiaan</a></li>
+            <li><a href="#">Pencegahan Penipuan</a></li>
+            <li><a href="#">Perlindungan Pembeli</a></li>
+            <li><a href="#">Perlindungan Penjual</a></li>
+        </ul>
+    </footer>
+
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+
+    <!-- Javascript Libraries -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

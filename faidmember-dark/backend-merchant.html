@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fasapay ID - Backend Merchant</title>
+
+    <!-- Vendor CSS -->
+    <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/sweetalert/dist/sweetalert.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/app_1.min.css" rel="stylesheet">
+    <link href="css/app_2.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <ul class="h-inner">
+            <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                <div class="line-wrap ">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+
+            <li class="pull-left">
+                <ul class="hi-menu">
+                    <li><a href="index.html" class="m-l-10"><img src="img/fasapay_logo.png" alt="" width="120px"></a></li>
+                    <!--
+                    <li class="drop-down p-l-25 p-t-5 hidden-xs">
+                        <a href="" data-toggle="tooltip" data-placement="bottom" title="Notifikasi">
+                            <i class="zmdi zmdi-globe-alt f-17"></i>
+                        </a>
+                    </li>
+
+                    <li class="p-l-25 p-t-5 hidden-xs"><a href=""> <i class="zmdi zmdi-account f-17"></i> &nbsp; FI50528 | Aktif</a></li>-->
+                </ul>
+            </li>
+
+            <li class="pull-right">
+                <ul class="hi-menu">
+                    <!--
+                    <li class="p-l-25 show-xs p-t-5"><a href="" data-toggle="tooltip" data-placement="bottom" title="Bahasa"> <img src="img/flags/Indonesia.png" alt="" width="16px"></a></li>
+                    <li class="p-r-25 show-xs p-t-5"><a href="" data-toggle="tooltip" data-placement="bottom" title="English"> <img src="img/flags/United_Kingdom.png" alt="" width="16px"></a></li>
+                    <li class="hidden-xs p-t-5"><a href="">Login Terakhir : 4 Juli 1990 09.39</a></li>-->
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <section id="main">
+        <aside id="sidebar" class="sidebar c-overflow">
+            <ul class="main-menu">
+                <li class="m-t-30"></li>
+                <li class="active">
+                    <a href="index.html"><i class="fa fa-store c-yellow"></i> Merchant </a>
+                </li>                
+            </ul>
+        </aside>
+
+        <section id="content">
+            <div class="container">
+                <div class="block-header">                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>TAMBAH MERCHANT</h2>
+                        </div>
+                        
+                        <div class="card-body card-padding">
+                            <form class="row" role="form">
+                                <div class="col-sm-6">
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Nama Usaha <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="nmusaha" placeholder="Isi dengan Nama Usaha">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Email Usaha <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Email yang dipergunakan untuk usaha">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Bentuk Badan Usaha <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Bentuk Badan Usaha</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Nama Badan Usaha</label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi Nama Badan Usaha">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">No.NPWP Usaha</label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi NPWP Usaha">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Provinsi <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Provinsi</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kota <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Kota</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kecamatan <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Kecamatan</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kelurahan <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Kelurahan</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Alamat Usaha <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan Alamat Usaha">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">RT/RW <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan RT/RW">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kode Pos <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan Kode Pos">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">No.Handphone <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan No.Handphone">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kategori <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Kode MMC</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kriteria <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Jenis Usaha</option>
+                                            <option >Usaha Mikro</option>
+                                            <option >Usaha Kecil</option>
+                                            <option >Usaha Menengah</option>
+                                            <option >Usaha Besar</option>
+                                            <option >Usaha Reguler</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>DATA PEMILIK</h2>
+                        </div>
+                        
+                        <div class="card-body card-padding">
+                            <form class="row" role="form">
+                                <div class="col-sm-6">
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Nama Lengkap <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="nmusaha" placeholder="Isi dengan Nama Lengkap">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Email Pemilik <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Email yang dipergunakan untuk settlement">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Jenis Kelamin <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Sex</option>
+                                            <option>Pria</option>
+                                            <option>Wanita</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Tempat, Tanggal Lahir  <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi Tempat Lahir">
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi Tanggal Lahir">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">No.KTP  <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan No.KTP">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Nama Ibu Kandung  <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan Nama Ibu Kandung">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">No.NPWP</label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan No.NPWP">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Provinsi <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Provinsi</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kota <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Kota</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kecamatan <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Kecamatan</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kelurahan <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Kelurahan</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Alamat Pemilik Saat Ini <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan Alamat Usaha">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">RT/RW <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan RT/RW">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">Kode Pos <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan Kode Pos">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">No.Telephone <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan No.Telephone">
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class="f-700 c-white" for="exampleInputEmail2">No.Handphone <span style="color:red;">*</span></label>
+                                        <input type="email" class="form-control input-sm" id="emusaha" placeholder="Isi dengan No.Handphone">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>DATA TEMPAT USAHA</h2>
+                        </div>
+                        
+                        <div class="card-body card-padding">
+                            <form class="row" role="form">
+                                <div class="col-sm-6">
+                                    
+                                    <div class="form-group fg-line">
+                                        <label class=" f-700 c-white" for="exampleInputEmail2">Mulai Usaha Sejak <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Bulan</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                        <select class="form-control">
+                                            <option>Tahun</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group fg-line">
+                                        <label class=" f-700 c-white" for="exampleInputEmail2">Status Kepemilikan <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Status</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group fg-line">
+                                        <label class=" f-700 c-white" for="exampleInputEmail2">Lokasi Usaha <span style="color:red;">*</span></label>
+                                        <select class="form-control">
+                                            <option>Pilih Lokasi</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>LAMPIRAN DATA</h2>
+                        </div>
+                        
+                        <div class="card-body card-padding">
+                            <form class="row" role="form">
+                                <div class="m-t-30"></div>
+                                <div class="col-sm-3">
+                                    <p class="f-500 m-b-20 f-700 c-white">Foto Selfie dan KTP <span style="color:red;">*</span></p>
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                    <div class="m-t-30"></div>
+                                    <p class="f-500 m-b-20 f-700 c-white">KTP Pemilik <span style="color:red;">*</span></p>
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                </div>
+                                <div class="m-t-30"></div>
+                                <div class="col-sm-3">
+                                    <p class="f-500 m-b-20 f-700 c-white">NPWP Pemilik <span style="color:red;">*</span></p>
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                    <div class="m-t-30"></div>
+                                    <p class="f-500 m-b-20 f-700 c-white">Tanda Tangan Pemilik <span style="color:red;">*</span></p>
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <p class="f-500 m-b-20 f-700 c-white">Tampak Depan Tempat Usaha <span style="color:red;">*</span></p>
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                    <div class="m-t-30"></div>
+                                    <p class="f-500 m-b-20 f-700 c-white">Logo Usaha <span style="color:red;">*</span></p>
+                                    
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                </div>
+                                <div class="m-t-30"></div>
+                                <div class="col-sm-3">
+                                    <p class="f-500 m-b-20 f-700 c-white">Dokumen Usaha <span style="color:red;">*</span></p>
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                    <div class="m-t-30"></div>
+                                    <p class="f-500 m-b-20 f-700 c-white">Dokumen Persetujuan SDK <span style="color:red;">*</span></p>
+
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file m-r-10">
+                                            <span class="fileinput-new">Unggah File</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="...">
+                                        </span>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+                                    </div>
+                                </div>
+                                <div class="m-t-30"></div>                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10 m-25">
+                        <a href="topup.html" class="btn bgm-amber btn-sm"><i class="fa fa-reply c-black"></i> Kembali</a>
+                        <a href="topup_manual_rb.html" class="btn btn-primary btn-sm"><i class="fa fa-thumbs-up c-yellow"></i> Simpan</a>
+                    </div>
+                </div>               
+            </div>
+        </section>
+    </section>
+
+    <footer id="footer">
+        Copyright &copy; 2018 Fasapay Indonesia
+    </footer>
+
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+
+    <!-- Javascript Libraries -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
