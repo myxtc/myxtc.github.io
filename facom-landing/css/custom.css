@@ -1,0 +1,60 @@
+/* Your CSS code here */
+
+.donker {
+    background-color: #286090;
+}
+
+.tl20 {
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.tl30 {
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.bl40 {
+	margin: 20px 0 40px 20px;
+}
+
+.ptpb {
+    padding: auto 30px;
+}
+
+.lor1 {
+	color: #c0c3c9;
+}
+
+.lor2 {
+    color: gold;
+}
+
+.lh1 {
+	line-height: 1;
+}
+
+.dividing {
+	margin: 40px;
+}
+
+.bg-img2 {
+    position: relative;
+    -webkit-backface-visibility: visible !important;
+    background-repeat: no-repeat;
+    background-position: 75% 25%;
+    background-size: contain;
+    height: 100%;
+}
+
+.col-sm-offset-91 {
+    margin-left: 82%;
+  }
+
+.tf {
+    font-size: 12px;
+}
+
+
+
+
