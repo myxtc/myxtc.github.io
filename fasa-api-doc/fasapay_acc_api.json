@@ -1,0 +1,1384 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "FasaPay Account API",
+    "description": "FasaPay Account API",
+    "version": "1.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://api.fasapay.co.id",
+      "description": "Live Server"
+    },
+    {
+      "url": "https://sandbox.fasapay.id/api",
+      "description": "Sandbox Server"
+    },
+    {
+      "url": "https://api.test.fasapay.id",
+      "description": "TEST Server"
+    }
+  ],
+  "security": [
+    {
+      "oAuth": []
+    }
+  ],
+  "paths": {
+    "/fasafasa": {
+      "post": {
+        "summary": "Transfer Fasa Cash to Another User. Only Available to ACTIVE User",
+        "operationId": "transferFasaFasa",
+        "security": [
+          {
+            "oAuth": [
+              "transfer"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FasaFasaForm"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "xml": {
+                  "name": "fasa_request"
+                },
+                "properties": {
+                  "fasa_fasa": {
+                    "$ref": "#/components/schemas/FasaFasaForm"
+                  }
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/FasaFasaForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Transfer Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendTransaction"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation Error or General Input Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/my/account": {
+      "get": {
+        "summary": "Get Account Data",
+        "operationId": "getMyAccount",
+        "security": [
+          {
+            "oAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User Account Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Account"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wallet": {
+      "get": {
+        "summary": "Get Available Wallet",
+        "operationId": "getMyWallet",
+        "security": [
+          {
+            "oAuth": [
+              "finance"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Available Wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wallet"
+                  }
+                }
+              }
+            },
+            "links": {
+              "GetWalletBalance": {
+                "operationId": "getBalance",
+                "parameters": {
+                  "name": "$response.body#/1/name"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wallet/{name}": {
+      "get": {
+        "summary": "Get Wallet balance",
+        "operationId": "getBalance",
+        "security": [
+          {
+            "oAuth": [
+              "finance"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "description": "The Name from `/wallet`",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "FasaCash",
+                "FasaPoint",
+                "FasaCash-Payment",
+                "FasaCash-DK"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Wallet Balance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletDetail"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/withdraw": {
+      "post": {
+        "summary": "Request Withdraw",
+        "operationId": "requestWithdraw",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WithdrawForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Withdraw Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WithdrawData"
+                }
+              }
+            },
+            "links": {
+              "getWithdrawDetailByBatchnumber": {
+                "operationId": "getWithdrawDetail",
+                "parameters": {
+                  "batchnumber": "$response.body#/batchnumber"
+                },
+                "description": "The `batchnumber` returned in the response can be used as the `batchnumber` parameter in `GET /withdraw/{batchnumber}`\n"
+              }
+            }
+          },
+          "400": {
+            "description": "Input Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/withdraw/{batchnumber}": {
+      "get": {
+        "summary": "Get Withdraw Detail by Batchnumber",
+        "operationId": "getWithdrawDetail",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchnumber",
+            "description": "The Batchnumber of the Withdraw Request",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Detail of Withdraw",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WithdrawData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/withdraw/bank-dst": {
+      "get": {
+        "summary": "Get List of Available Bank Destination",
+        "operationId": "getWithdrawBankDst",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Available Destination Bank to Withdraw",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Banks"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank": {
+      "post": {
+        "summary": "Create New Bank Destination",
+        "operationId": "createBank",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Bank"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The Detail ID and Detail of the New Bank",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bank"
+                }
+              }
+            },
+            "links": {
+              "getBankbyId": {
+                "operationId": "getBank",
+                "parameters": {
+                  "idBank": "$response.body#/id"
+                },
+                "description": "The `id` returned in the response can be used as the `idBank` parameter in `GET /bank/{idBank}`\n"
+              },
+              "deleteBankById": {
+                "operationId": "deleteBank",
+                "parameters": {
+                  "idBank": "$response.body#/id"
+                },
+                "description": "The `id` returned in the response can be used as the `idBank` parameter in `DELETE /bank/{idBank}`\n"
+              },
+              "updateBankById": {
+                "operationId": "updateBank",
+                "parameters": {
+                  "idBank": "$response.body#/id"
+                },
+                "description": "The `id` returned in the response can be used as the `idBank` parameter in `PUT /bank/{idBank}`\n"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get List of Registered Bank Destination",
+        "operationId": "getBanks",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Available Destination Bank",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Banks"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/{idBank}": {
+      "delete": {
+        "summary": "Delete Bank",
+        "operationId": "deleteBank",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The Bank is Deleted Succesfully"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get Bank Data",
+        "operationId": "getBank",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bank Detail",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bank"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update Bank Data",
+        "operationId": "updateBank",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Bank"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The Detail ID and Detail of the New Bank",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bank"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank-bank": {
+      "post": {
+        "summary": "Request Bank to Bank Transfer",
+        "operationId": "requestBankBank",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankBankForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Bank to Bank Transfer Request Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankBankData"
+                }
+              }
+            },
+            "links": {
+              "getBankBankDetailByBatchnumber": {
+                "operationId": "getBankBankDetail",
+                "parameters": {
+                  "batchnumber": "$response.body#/batchnumber"
+                },
+                "description": "The `batchnumber` returned in the response can be used as the `batchnumber` parameter in `GET /bank-bank/{batchnumber}`\n"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank-bank/{batchnumber}": {
+      "get": {
+        "summary": "Get Bank Bank Detail by Batchnumber",
+        "operationId": "getBankBankDetail",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "batchnumber",
+            "description": "The Batchnumber of the Transfer Bank to Bank Request",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Detail of the Bank to Bank Transfer",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankBankData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank-bank/bank-dst": {
+      "get": {
+        "summary": "Get List of Available Bank Destination",
+        "operationId": "getBankBankBankDst",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Available Destination Bank to Transfer To",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Banks"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank-bank/bank-src": {
+      "get": {
+        "summary": "Get List of Available Bank Source",
+        "operationId": "getBankBankBankSrc",
+        "security": [
+          {
+            "oAuth": [
+              "withdraw"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/FasaTimestamp"
+          },
+          {
+            "$ref": "#/components/parameters/FasaCNonce"
+          },
+          {
+            "$ref": "#/components/parameters/FasaSignature"
+          },
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Available Source Bank Source",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopupChannels"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FasaFasaForm": {
+        "type": "object",
+        "required": [
+          "to_acc",
+          "amount"
+        ],
+        "properties": {
+          "to_acc": {
+            "description": "Recipient Account",
+            "type": "string",
+            "pattern": "^FI\\d{5,9}$"
+          },
+          "amount": {
+            "description": "Amount to Send",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "note": {
+            "description": "Transfer Note",
+            "type": "string",
+            "maxLength": 1000
+          },
+          "ref": {
+            "description": "Transfer Reference Code",
+            "type": "string",
+            "maxLength": 64
+          }
+        }
+      },
+      "SendTransaction": {
+        "type": "object",
+        "properties": {
+          "batchnumber": {
+            "type": "string",
+            "description": "Unique Transaction Identity",
+            "pattern": "^\\w\\w\\d{9,15}$"
+          },
+          "recipient_name": {
+            "type": "string",
+            "description": "Recipient Full Name"
+          },
+          "fp_recipient": {
+            "type": "string",
+            "description": "Recipient FasaPay Account",
+            "pattern": "^F\\w\\d{5,9}$"
+          },
+          "sender_name": {
+            "type": "string",
+            "description": "Sender Full Name"
+          },
+          "fp_sender": {
+            "type": "string",
+            "description": "Sender FasaPay Account",
+            "pattern": "^F\\w\\d{5,9}$"
+          },
+          "currency_sender": {
+            "type": "string",
+            "description": "Currency Used to Send"
+          },
+          "amount_sender": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d\\d$",
+            "description": "Total Amount Send"
+          },
+          "fee_sender": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d\\d$",
+            "description": "Send Fee Amount"
+          },
+          "balance_sender": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d\\d$",
+            "description": "Sender Current Balance"
+          },
+          "note": {
+            "type": "string",
+            "description": "Transaction Note"
+          },
+          "merchant_ref": {
+            "type": "string",
+            "description": "Transaction Reference"
+          },
+          "method": {
+            "type": "string",
+            "description": "Transaction Creator Platform",
+            "example": "WEB"
+          },
+          "ip_address": {
+            "type": "string",
+            "description": "Transaction Creator IP Address"
+          },
+          "created_at": {
+            "type": "integer",
+            "description": "Unixtimestamp Created Transaction"
+          },
+          "updated_at": {
+            "type": "integer",
+            "description": "Unixtimestamp Updated Transaction"
+          },
+          "status": {
+            "type": "string",
+            "description": "Transaction Status * `PENDING`    - Transaction is Created Waiting to be Processed * `FINISH`     - Transaction is Processed and Finished, Balance is Updated * `CANCEL`     - Transaction is Canceled, Balance is Updated * `CONFIRMED`  - Transaction is marked as CONFIRMED, Waiting to be Processed * `PAID`       - Transaction is marked as PAID, Waiting to be Processed * `HOLD`       - Transaction is on HOLD, Please Contact Support for Detail\n",
+            "enum": [
+              "PENDING",
+              "FINISH",
+              "CANCEL",
+              "CONFIRMED",
+              "PAID",
+              "HOLD"
+            ]
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "message",
+          "code",
+          "status"
+        ],
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Error Message"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error Code"
+          },
+          "status": {
+            "type": "integer",
+            "description": "HTTP Status Code"
+          },
+          "data": {
+            "type": "object",
+            "description": "The Input Data"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error Summary"
+          },
+          "error_description": {
+            "type": "string",
+            "description": "More Detail of The Error"
+          },
+          "error_uri": {
+            "type": "string",
+            "description": "Error Description and Possible Mitigation URL"
+          },
+          "error_detail": {
+            "description": "Error Detail or List of Error",
+            "oneOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Account": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "description": "FasaPay Account Number"
+          },
+          "fullname": {
+            "type": "string",
+            "description": "User Full Name"
+          },
+          "status": {
+            "type": "string",
+            "description": "User Status"
+          },
+          "type": {
+            "type": "string",
+            "description": "User Type"
+          }
+        }
+      },
+      "Wallet": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The Wallet name",
+            "example": "FasaCash"
+          },
+          "description": {
+            "type": "string",
+            "description": "The Description/Note About the Wallet",
+            "example": "Base Saldo FasaPay. Digunakan untuk Transfer, Pembayaran, Topup, Withdraw"
+          },
+          "code": {
+            "type": "string",
+            "description": "Currency Code of the Wallet",
+            "example": "IDR"
+          }
+        }
+      },
+      "WalletDetail": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Wallet"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "fund_in": {
+                "type": "string",
+                "format": "number",
+                "description": "The Amount of Fund entering the wallet (+)",
+                "example": "10000.00"
+              },
+              "fund_out": {
+                "type": "string",
+                "format": "number",
+                "description": "The Amount of fund exicting the wallet (-)",
+                "example": "2500.00"
+              },
+              "locked_fund": {
+                "type": "string",
+                "format": "number",
+                "description": "The Amount of Locked fund because of pending withdraw, transfer or dispute",
+                "example": "1250.00"
+              },
+              "balance": {
+                "type": "string",
+                "format": "number",
+                "description": "The Amount of Available fund in the wallet",
+                "example": "6250.00"
+              }
+            }
+          }
+        ]
+      },
+      "Bank": {
+        "type": "object",
+        "description": "User Bank Detail",
+        "required": [
+          "bank_code",
+          "owner_name",
+          "account_number"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID of Bank Member, set to `null` undefined or empty for New Bank Account. This field will be ignored in `$createBank`\n",
+            "nullable": true,
+            "example": 20
+          },
+          "bank_label": {
+            "type": "string",
+            "description": "Labeling of the Bank Account Detail",
+            "example": "BCA Utama"
+          },
+          "bank_code": {
+            "type": "string",
+            "description": "Bank Code from `getBankList#/bank_code`",
+            "example": "030"
+          },
+          "bank_name": {
+            "type": "string",
+            "description": "Bank Name",
+            "example": "BCA"
+          },
+          "owner_name": {
+            "type": "string",
+            "description": "Bank Account Owner Name",
+            "example": "Dave Sam"
+          },
+          "account_number": {
+            "type": "string",
+            "description": "Bank Account Number",
+            "example": "0132456789"
+          },
+          "note": {
+            "type": "string",
+            "description": "Note or Additional Detail for the Bank",
+            "example": "Bank Milik Pemilik"
+          }
+        }
+      },
+      "Banks": {
+        "type": "object",
+        "description": "Dictionary of Available Bank with `#/components/schemas/Bank/id` as the Index\n",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Bank"
+        }
+      },
+      "InvoiceBank": {
+        "type": "object",
+        "description": "The Invoice that User need to Pay and Where to Pay for this Request to be Processed\n",
+        "required": [
+          "total_amount",
+          "bank_name",
+          "bank_account",
+          "bank_account_owner_name"
+        ],
+        "properties": {
+          "total_amount": {
+            "type": "string",
+            "format": "number",
+            "description": "The Total Amount User need to Pay",
+            "example": "1000501.00"
+          },
+          "transfer_note": {
+            "type": "string",
+            "description": "Transfer Note",
+            "example": "TD200505654321"
+          },
+          "bank_name": {
+            "type": "string",
+            "description": "The Bank Name to Transfer to",
+            "example": "BCA"
+          },
+          "bank_account": {
+            "type": "string",
+            "description": "The Bank Account to Transfer to",
+            "example": "11558866324"
+          },
+          "bank_account_owner_name": {
+            "type": "string",
+            "description": "The Bank Account Owner Name",
+            "example": "PT Fasa Centra Artajaya"
+          },
+          "bank_note": {
+            "type": "string",
+            "description": "Note about the Bank Account or Invoice Payment"
+          },
+          "tutorial_uri": {
+            "type": "string",
+            "format": "uri",
+            "description": "Link to How to Pay / How to Transfer Tutorial",
+            "example": "https://www.fasapay.co.id/guide/bca"
+          }
+        }
+      },
+      "WithdrawForm": {
+        "type": "object",
+        "properties": {
+          "nominal": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "Amount to Withdraw",
+            "example": 10000
+          },
+          "note": {
+            "type": "string",
+            "description": "Withdraw Note",
+            "example": "Withdraw Fasa Balance"
+          },
+          "wallet": {
+            "type": "string",
+            "description": "Withdraw from Specific Wallet",
+            "default": "fasacash",
+            "example": "fasacash"
+          },
+          "bank_dst": {
+            "description": "Destination Bank Can be a Bank Object to create new Bank\nor choose for one already saved in `$getWithdrawBankDst`\n",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Bank"
+              },
+              {
+                "type": "integer",
+                "description": "ID Member Bank from `$getWithdrawBankDst#/1/id`\n",
+                "example": 99
+              }
+            ]
+          }
+        }
+      },
+      "WithdrawData": {
+        "type": "object",
+        "description": "The Withdraw Detail",
+        "properties": {
+          "batchnumber": {
+            "type": "string",
+            "description": "Unique Identification Number",
+            "example": "WD210101123456"
+          },
+          "nominal": {
+            "type": "string",
+            "format": "number",
+            "description": "The Amount to Withdraw",
+            "example": "10000.00"
+          },
+          "fee": {
+            "type": "string",
+            "format": "number",
+            "description": "The Withdraw Fee",
+            "example": "2000.00"
+          },
+          "total_amount": {
+            "type": "string",
+            "format": "number",
+            "description": "The Total Amount send to User ( nominal - fee)",
+            "example": "8000.00"
+          },
+          "note": {
+            "type": "string",
+            "description": "Withdraw Note",
+            "example": "Withdraw Fasa Balance"
+          },
+          "bank_dst": {
+            "$ref": "#/components/schemas/Bank"
+          }
+        }
+      },
+      "BankBankForm": {
+        "type": "object",
+        "properties": {
+          "nominal": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "Amount to Transfer",
+            "example": 1000000
+          },
+          "note": {
+            "type": "string",
+            "description": "Transfer Note",
+            "example": "Kiriman Bulanan"
+          },
+          "bank_src": {
+            "description": "The ID of Channel on how the Payment would be done The Available list is from `getBankBankBankSrc`\n",
+            "type": "integer",
+            "example": 1
+          },
+          "bank_dst": {
+            "description": "Destination Bank Can be a Bank Object to create new Bank\nor choose for one already saved in `$getBankBankBankDst`\n",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Bank"
+              },
+              {
+                "type": "integer",
+                "description": "ID Member Bank from `$getBankBankBankDst#/1/id`\n",
+                "example": 99
+              }
+            ]
+          }
+        }
+      },
+      "BankBankData": {
+        "type": "object",
+        "properties": {
+          "batchnumber": {
+            "type": "string",
+            "description": "Unique Identification Number",
+            "example": "TD200505654321"
+          },
+          "nominal": {
+            "type": "string",
+            "format": "number",
+            "description": "The Amount to Transfer",
+            "example": "1000000.00"
+          },
+          "fee": {
+            "type": "string",
+            "format": "number",
+            "description": "The Amount of Fee To Transfer",
+            "example": "500.00"
+          },
+          "unique_code": {
+            "type": "string",
+            "format": "number",
+            "description": "The Unique Transaction Identifier for quicker processing",
+            "example": "1.00"
+          },
+          "total_amount": {
+            "type": "string",
+            "format": "number",
+            "description": "The Total Amount User need to Transfer (nominal + fee + unique_code)",
+            "example": "1000501.00"
+          },
+          "note": {
+            "type": "string",
+            "description": "Transfer Note",
+            "example": "Kiriman Bulanan"
+          },
+          "bank_dst": {
+            "$ref": "#/components/schemas/Bank"
+          },
+          "invoice": {
+            "$ref": "#/components/schemas/InvoiceBank"
+          }
+        }
+      },
+      "TopupChannel": {
+        "type": "object",
+        "description": "Where and How the Payment or Topup to be Paid",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The ID of the Topup Channel",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Topup Channel Name",
+            "example": "Bank BCA"
+          },
+          "note": {
+            "type": "string",
+            "description": "Description or Note about the Topup Channel",
+            "example": "Transfer melalui Bank BCA"
+          },
+          "category": {
+            "type": "string",
+            "description": "Proses Manual - Jam Kerja | Transfer BANK"
+          }
+        }
+      },
+      "TopupChannels": {
+        "type": "object",
+        "description": "List of Topup Channel",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/TopupChannel"
+        }
+      }
+    },
+    "examples": {
+      "fasa_fasa": {
+        "summary": "Send FasaFasa Example",
+        "value": {
+          "to_acc": "FI903408",
+          "amount": "10000",
+          "note": "Transfer Fasa ke Fasa",
+          "ref": "ref-fasa-fasa-10k"
+        }
+      }
+    },
+    "securitySchemes": {
+      "oAuth": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "/auth/token",
+            "scopes": {
+              "transfer": "Create Topup, Transfer, Payment",
+              "withdraw": "Create Withdraw, Fasa to Bank,\nCreate and Modify Bank Account,\nBank to Bank Transfer\n",
+              "finance": "Read Transaction History, Account Balance"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "FasaTimestamp": {
+        "name": "X-FASA-Timestamp",
+        "in": "header",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "example": 1633149585,
+        "description": "Unix Timestamp Saat Request Dibuat.\nFasaPay akan menolak Request jika selisih antara server time dan X-FASA-Timestamp\nlebih dari 200 detik\n"
+      },
+      "FasaCNonce": {
+        "name": "X-FASA-CNonce",
+        "in": "header",
+        "schema": {
+          "type": "integer"
+        },
+        "required": true,
+        "example": 1633149585789,
+        "description": "Random Number yang harus unik di hari yang sama (UTC Timezone).\nberfungsi untuk melindungi API dari Reply Attack\ndan dari duplicate Request.\nFasaPay akan menolak Request jika X-FASA-CNonce bukan integer\natau jika nilai sudah pernah digunakan di hari yang sama (UTC Timezone).\n"
+      },
+      "FasaSignature": {
+        "name": "X-FASA-Signature",
+        "in": "header",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "example": "063dd33b9bcb75b81102b29bc8aea1e8025b48efe0dcdaee3f230cb5edda015e",
+        "description": "Setiap API Call juga harus dilengkapi dengan Signature agar dapat di verifikasi dan terlindungi dari upaya tampering\n\nSignature dibuat dengan menggunakan `HMAC SHA-256` dan API `client_secret` sebagai Key\n\n```\nSignature = HMAC-SHA256(api_client_secret, hmac_string)\n```\n\n\nHMAC_STRING dibuat dengan parameter Berikut\n\n1. Request Unix Timestamp dari Header X-FASA-Timestamp\n2. Request Client Nonce dari Header X-FASA-CNonce\n3. Request PATH\n4. Request Query String\n5. Request Body\n6. Request Access Token\n\n```\nhmac_string = X-FASA-Timestamp + \":\" + X-FASA-CNonce + \":\" + PATH + \":\" + BASE64(QueryString) + \":\" + BASE64(RequestBody) + \":\" + access_token\n```\n"
+      },
+      "Page": {
+        "name": "page",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "default": 0
+        },
+        "example": 1,
+        "description": "The zero-based page number"
+      },
+      "PageSize": {
+        "name": "per-page",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "default": 20
+        },
+        "example": 20,
+        "description": "The Amount of Item Displayed per Page"
+      }
+    }
+  }
+}
