@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Fasapay" content="Sistem Pembayaran Online">
+    <meta name="Fasapay" content="Indonesia">
+
+    <title></title>
+    <style type="text/css">
+    td:nth-child(1) { background: #F7F7F7; }
+    td:nth-child(2) { background: #F0F0F0; text-align: center; }
+    td:nth-child(3) { background: lavenderblush; text-align: center;}
+    td:nth-child(4) { background: #DFE3EE; text-align: center;}
+    td:nth-child(5) { background: lavenderblush; text-align: center;}
+    </style>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+   
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700%7CMontserrat:400,700%7CRaleway:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Fitur, Biaya dan Limit Personal</h1>
+                <ul>
+                    <li>Limit FasaPay anda tergantung pada status member anda. Status member anda ada di bagian atas member area anda, di sebelah no akun anda </li>
+                    <li>Semakin tinggi status anda (dari tabel di bawah, paling tinggi adalah yang paling kanan) maka semakin besar limit anda</li>
+                    <li>Limit yang tertera di bawah ini merupakan limit per transaksi, bukan limit dalam sehari. Anda bisa berkali-kali bertransaksi dalam sehari, asalkan sekali bertransaksi tidak melebihi <strong>limit incoming</strong></li>
+                    <li>Jika anda baru saja mendaftar menjadi anggota FasaPay, maka status member anda adalah Terdaftar. Status ini belum bisa bertransaksi keluar, sehingga diharuskan untuk upgrade ke Aktif. Syarat untuk upgrade ke Aktif bisa dilihat di tabel di bawah ini</li>
+                    <li>Untuk upgrade keanggotaan, dengan mengupload scan persyaratan dokumen yang asli (bukan fotokopian/hitam putih) yang diperlukan pada member area, menu Profil > Upload ID</li>
+                </ul>
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Detail
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#fitur" data-toggle="tab">Fitur</a>
+                                </li>
+                                <li><a href="#biaya" data-toggle="tab">Biaya</a>
+                                </li>
+                                <li><a href="#limit" data-toggle="tab">Limit</a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="fitur">
+                                    <div id="no-more-tables">
+                                        <table class="col-md-12 table-bordered table-striped table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Layanan</th>
+                                                    <th class="text-center">Non Member</th>
+                                                    <th class="text-center">Terdaftar</th>
+                                                    <th class="text-center">Aktif</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Pendaftaran</td>
+                                                    <td class="info" data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td class="info" data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td class="info" data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Top Up Saldo</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Transfer Dana</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Tarik Dana</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Cek dan Ekspor Mutasi Transaksi</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Pengiriman Tagihan Transaksi</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Sistem Afiliasi dan Komisi Referal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Pin Keamanan Berlapis</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Pembuatan API</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Transfer Link</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Aplikasi FasaPay Mobile</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Akses Riwayat Aktivitas</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Live Chat</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/check.png" alt="check" width="16" height="16"  /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="biaya">
+                                    <div id="no-more-tables">
+                                        <table class="col-md-12 table-bordered table-striped table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Layanan</th>
+                                                    <th class="text-center">Non Member</th>
+                                                    <th class="text-center">Terdaftar</th>
+                                                    <th class="text-center">Aktif</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Pendaftaran</td>
+                                                    <td data-title="Non Member" >Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Administrasi Awal</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Berlangganan Sistem</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>Top Up</strong> melalui</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan"  style="text-indent:30px;">Transfer Bank</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Mandiri Virtual Account</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">BCA Klik Pay</td>
+                                                    <td data-title="Non Member">Rp. 2.750,-</td>
+                                                    <td data-title="Terdaftar">Rp. 2.750,-</td>
+                                                    <td data-title="Aktif">Rp. 2.750,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Permata Virtual Account</td>
+                                                    <td data-title="Non Member">Rp. 2.500,-</td>
+                                                    <td data-title="Terdaftar">Rp. 1.500,-</td>
+                                                    <td data-title="Aktif">Rp. 1.500,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>Transfer</strong></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;"> Antar Akun Fasapay Maksimal Rp 10.000.000,-</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;"> Dari Akun Fasapay ke Bank Maksimal Rp 1.000.000,-</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">Rp 1.000,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;"> Antar Bank Maksimal Rp 5.000.000,-</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">Rp 500,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Aktif" style="text-indent:30px;">Antar Bank Maksimal Rp 10.000.000,-</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">Rp 1.000,-</td>
+                                                </tr>
+                                                <tr>
+                                                <tr>
+                                                    <td data-title="Aktif" style="text-indent:30px;">Antar Bank Maksimal Rp 25.000.000,-</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif"> Rp 2.000,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>Tarik Dana</strong> ke</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px; font-size:10px;">BCA, BRI, BNI, MANDIRI  <span style="color:red;font-size:24px;">*</span></td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>Refund</strong> ke</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px; font-size:10px;">BCA, BRI, BNI, MANDIRI </td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px; font-size:10px;">Selain BCA, BRI, BNI, MANDIRI  </td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar">7500</td>
+                                                    <td data-title="Aktif">7500</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Cek dan Ekspor Mutasi</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Pengiriman Tagihan Transaksi</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Banner Sistem Afiliasi</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16" /></td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">SMS Personal Pin</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Aplikasi Fasapay Mobile</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;">Akses Riwayat Aktifitas</td>
+                                                    <td data-title="Non Member">Gratis</td>
+                                                    <td data-title="Terdaftar">Gratis</td>
+                                                    <td data-title="Aktif">Gratis</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="limit">
+                                    <div id="no-more-tables">
+                                        <table class="col-md-12 table-bordered table-striped table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Layanan</th>
+                                                    <th class="text-center">Non Member</th>
+                                                    <th class="text-center">Terdaftar</th>
+                                                    <th class="text-center">Aktif</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>PEMBAYARAN</strong> </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;"> Minimal</td>
+                                                    <td data-title="Non Member">10.000 ,-</td>
+                                                    <td data-title="Terdaftar">10.000 ,-</td>
+                                                    <td data-title="Aktif">10.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Maksimal</td>
+                                                    <td data-title="Non Member">2.000.000 ,-</td>
+                                                    <td data-title="Aktif">2.000.000 ,-</td>
+                                                    <td data-title="Aktif">10.000.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>TOP UP SALDO</strong></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Minimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar">10.000 ,-</td>
+                                                    <td data-title="Aktif">10.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Maksimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar">2.000.000 ,-</td>
+                                                    <td data-title="Aktif">10.000.000 ,-</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>TRANSFER ANTAR AKUN</strong></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Minimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">10.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Maksimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">10.000.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>TRANSFER AKUN KE BANK</strong></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Minimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">10.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Maksimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">10.000.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>TRANSFER DANA ANTAR BANK</strong></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Minimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">10.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Maksimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">25.000.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-align:left;"><strong>TARIK DANA</strong></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Minimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">10.000 ,-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-title="Layanan" style="text-indent:30px;">Maksimal</td>
+                                                    <td data-title="Non Member"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Terdaftar"><img src="https://marketing.fasapay.id/wp-content/uploads/2017/05/cross.png" alt="cross" width="16" height="16"  /></td>
+                                                    <td data-title="Aktif">10.000.000 ,-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                </div>
+                 <!-- /.panel -->
+            <span style="color:red; font-size:24px;">*</span> Untuk informasi Tarik Dana dari Bank Lain silahkan hubungi <a href=""><strong>Marketing Support</strong></a>
+            </div>            
+        </div>
+        <div class="pd50"></div>
+    </div>
+
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>
