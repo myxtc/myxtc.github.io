@@ -1,0 +1,192 @@
+<div class="row">
+        <div class="col-md-4 col-12 mt-3">
+          <div class="row">
+            <div class="col-12 text-md-left text-center">
+              <img src="https://indoflazz.com/assets/img/kategori/164525619950.jpg" class="rounded mr-3 img-fluid" style="border-radius: 10px;" width="200px" height="200px">
+            </div>
+            <div class="col-12 mt-3">
+              <h5 class="text-white">Call Of Duty Mobile</h5>
+              <p class="text-white">Top up CP hanya dalam hitungan detik!<br>
+7x24 Jam Kamu bisa Membelinya, dimanapun, kapanpun kamu mau. <br>
+Cukup masukan UserId Kamu, lalu pilih jumlah CP yang kamu inginkan, <br>
+selesaikan pembayaran, dan CP akan secara langsung ditambahkan ke akun Call Of Duty Mobile Kamu.
+<br><br>
+ <b>Proses Maks 1x24 Jam, Jika tidak ada antrian proses memakan waktu 3-5 menit </b></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 col-12 mt-3">
+          <form id="form_order" method="POST">
+            <div class="row">
+              <input type="hidden" name="kategori" id="kategori" value="15">
+              <div class="col-12" id="form">
+    <h5 class="text-white"><span class="badge badge-primary badge-square mr-1">1</span> Lengkapi Data</h5>
+    <div class="card bg-dark-2">
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col-md-10 col-12">
+            <input type="number" class="form-control" id="id" placeholder="User ID" name="id" required="">
+          </div>
+          <div class="col-md-2 col-12 mt-md-2 mt-3"><a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal"><font color="white"><i class="fas fa-question"></i> Bantuan</font></a></div>
+        </div>
+      </div>
+    </div></div>
+              <div class="col-12">
+                <h5 class="text-white"><span class="badge badge-primary badge-square mr-1">2</span> Pilih Nominal</h5>
+                <div class="card bg-dark-2">
+                  <div class="card-body">
+                                        <input required="" type="radio" id="layanan_156" class="radio-nominal" name="layanan" value="156">
+                    <label for="layanan_156">26 CP</label>
+                                        <input required="" type="radio" id="layanan_158" class="radio-nominal" name="layanan" value="158">
+                    <label for="layanan_158">106 CP</label>
+                                        <input required="" type="radio" id="layanan_162" class="radio-nominal" name="layanan" value="162">
+                    <label for="layanan_162">1584 CP</label>
+                                        <input required="" type="radio" id="layanan_163" class="radio-nominal" name="layanan" value="163">
+                    <label for="layanan_163">2640 CP</label>
+                                        <input required="" type="radio" id="layanan_164" class="radio-nominal" name="layanan" value="164">
+                    <label for="layanan_164">5280 CP</label>
+                                        <input required="" type="radio" id="layanan_165" class="radio-nominal" name="layanan" value="165">
+                    <label for="layanan_165">10560 CP</label>
+                                        <input required="" type="radio" id="layanan_166" class="radio-nominal" name="layanan" value="166">
+                    <label for="layanan_166">26400 CP</label>
+                                        <input required="" type="radio" id="layanan_167" class="radio-nominal" name="layanan" value="167">
+                    <label for="layanan_167">52800 CP</label>
+                                      </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h5 class="text-white"><span class="badge badge-primary badge-square mr-1">3</span> Pilih Pembayaran</h5>
+                <div class="card bg-dark-2">
+                  <div class="card-body">
+                                      <input required="" type="radio" id="method_1" class="radio-pembayaran" name="metode" value="4">
+                    <label for="method_1">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1642338225Bank_BCA.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="BCA">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                                            <input required="" type="radio" id="method_2" class="radio-pembayaran" name="metode" value="6">
+                    <label for="method_2">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1633963759ovo_purple.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="OVO">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                        <div class="rek" id="rek_6" style="display: none;"><input type="text" class="form-control mt-1 mb-3" placeholder="Masukan Nomor Ovo Anda" name="rek"></div>
+                                                            <input required="" type="radio" id="method_3" class="radio-pembayaran" name="metode" value="7">
+                    <label for="method_3">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1644674938Dana.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="Dana">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                                            <input required="" type="radio" id="method_4" class="radio-pembayaran" name="metode" value="10">
+                    <label for="method_4">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1652970966386735878902299.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="BRI_VA">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                                            <input required="" type="radio" id="method_5" class="radio-pembayaran" name="metode" value="11">
+                    <label for="method_5">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1652971088386815883203585.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="BNI_VA">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                                            <input required="" type="radio" id="method_6" class="radio-pembayaran" name="metode" value="12">
+                    <label for="method_6">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1652971108387325886050323taaa.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="PERMATA_VA">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                                            <input required="" type="radio" id="method_7" class="radio-pembayaran" name="metode" value="13">
+                    <label for="method_7">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1652971126387425889450564ri.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="MANDIRI_VA">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                                            <input required="" type="radio" id="method_8" class="radio-pembayaran" name="metode" value="14">
+                    <label for="method_8">
+                      <!--<i class="fas fa-check-square position-absolute" style="font-size: 15px;"></i>-->
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6"><img src="https://indoflazz.com/assets/img/1652972160.png" width="100px"></div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="VA_BSI">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                                                                                <input required="" type="radio" id="method_saldo" class="radio-pembayaran" name="metode" value="2">
+                    <label for="method_saldo">
+                      <div class="row py-3 mx-auto">
+                        <div class="col-6">
+                          <div style="display: inline-block;"><i class="fas fa-wallet bg-primary p-2 text-white" style="font-size: 15px; border-radius:5px"></i></div>
+                          <div style="display: inline-block;">Saldo</div>
+                        </div>
+                        <div class="col-6 text-right">
+                          Harga<br>
+                          <b id="Saldo">Rp 0</b>
+                        </div>
+                      </div>
+                    </label>
+                    <div class="rek" id="rek_2" style="display: none;">
+                                              <div class="alert alert-danger" role="alert">Untuk menggunakan metode ini anda harus <a href="https://indoflazz.com/login">masuk</a> terlebih dahulu</div>
+                                          </div>
+                                      </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h5 class="text-white"><span class="badge badge-primary badge-square mr-1">4</span> Beli</h5>
+                <div class="card bg-dark-2">
+                  <div class="card-body">
+                    <div class="">
+                      <label class="text-white">Nomor WhatsApp</label>
+                      <input required="" type="number" class="form-control" placeholder="62814XXXXXX" id="email" name="kontak">
+                    </div>
+                    <div class="mt-2">
+                      <span class="text-muted">Dengan membeli otomatis saya menyutujui <a href="https://indoflazz.com/terms" class="text-white">Ketentuan Layanan</a></span>
+                    </div>
+                    <div class="mt-2">
+                      <input required="" class="btn btn-primary" id="btn_beli" type="button" value="Beli Sekarang">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+                                          <div class="g-recaptcha" data-sitekey="6LfRG8IeAAAAACOXx0_ti8tW1UMkocnHZ8vNPhI8" data-size="invisible"><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfRG8IeAAAAACOXx0_ti8tW1UMkocnHZ8vNPhI8&amp;co=aHR0cHM6Ly9pbmRvZmxhenouY29tOjQ0Mw..&amp;hl=en&amp;v=g9jXH0OtfQet-V0Aewq23c7K&amp;size=invisible&amp;cb=kdupysgay3mf" role="presentation" name="a-ycvu2m2t03ak" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="256" height="60" frameborder="0"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                            
+            </div>
+          </form>
+        </div>
+      </div>
