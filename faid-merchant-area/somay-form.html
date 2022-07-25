@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fasapay ID - Merchant Area</title>
+
+
+    <!-- Vendor CSS -->
+    <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/app_1.min.css" rel="stylesheet">
+    <link href="css/app_2.min.css" rel="stylesheet">    
+
+    <!-- FA 5 -->
+    <link href="fontawesome-pro-5.1.0-web/css/fontwesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="clearfix bgm-white">
+        <ul class="h-inner">
+            <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                <div class="line-wrap ">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+            
+            <li class="pull-left">
+                <ul class="hi-menu">
+                    <li><a href="index.html" class="m-l-10"><img src="img/fasapay_logo.png" alt="" width="120px"></a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <section id="main">
+        <aside id="sidebar" class="sidebar c-overflow">
+            <div class="card-header bgm-secondary">
+                <div class="m-l-20">                       
+                    <div class="form-group" >
+                        <div class="btn bgm-amber">
+                            <div class="fg-line">
+                                <div>
+                                    <select class="form-control c-white">
+                                        <option>Tes Mode</option>
+                                        <option disabled value="Live Mode">Live Mode</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>   
+            <div class="s-profile">
+                <div class="mm-profile">
+                    <a href="#" class="media">
+                        <img class="pull-left" src="img/1.jpg" alt="">
+                        <div class="media-body c-black">
+                            Toko Tiki Taka
+                            <br><span> FN709876 </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-header bgm-pink">
+                        <span class="c-white f-500">Fasa Cash : </span> <span class="c-white pull-right">100.000 <span class="f-700 c-yellow"> IDR</span> </span>
+                        <!--
+                        <br><span class="c-blue f-500">Fasa Poin</span> : <span class="c-white pull-right">5 <span class="f-700 c-blue">pts</span> </span>
+                         -->
+                    </div>
+                </div>
+            </div>
+            <ul class="main-menu">
+                <li class="active">
+                    <a href="index.html"><i class="zmdi zmdi-home c-green"></i> Depan</a>
+                </li>
+                <li><a href="riwayat.html"><i class="zmdi zmdi-receipt c-pink"></i> History Transaksi</a></li>
+                <li><a href="somay.html"><i class="zmdi zmdi-link c-pink"></i> SoMAY(Social Media wAY)</a></li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-account-box c-pink"></i> Akun</a>
+                    <ul>
+                        <li><a href="#"><i class=""></i> Profil</a></li>
+                        <li><a href="#"><i class=""></i> Kelola Pengguna</a></li>                        
+                        <li><a href="#"><i class=""></i> API key</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-local-library c-pink"></i>Dokumentasi</a>
+                    <ul>
+                        <li><a href="#"><i class=""></i> API</a></li>
+                        <li><a href="#"><i class=""></i> SCI</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="zmdi zmdi-time-restore c-red"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <section id="content">
+            <div class="container">
+                <div class="card p-5 bgm-indigo">
+                    <h4 class="m-l-10"><i class="zmdi zmdi-link zmdi-hc-lg c-red"></i> <span class="c-white">Form Pembuatan Link Pembayaran</span></h4>
+                </div>
+
+                <div class="card">
+                    <form class="form-horizontal" role="form">
+                        <div class="card-header">
+                            <h2>Data Pembayaran</h2>
+                        </div>
+                            
+                        <div class="card-body card-padding">
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Jumlah</label>
+                                <div class="col-sm-10">
+                                    <div class="fg-line">
+                                        <input type="text" class="form-control input-sm" id="" placeholder="Rp 70.000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Berlaku hingga</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group form-group">
+                                        <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                        <div class="dtp-container fg-line">
+                                            <input type='text' class="form-control date-time-picker" placeholder="Klik disini ...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <form class="form-horizontal" role="form">
+                        <div class="card-header">
+                            <h2>Data Pelanggan</h2>
+                        </div>                            
+                        <div class="card-body card-padding">
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Nama</label>
+                                <div class="col-sm-10">
+                                    <div class="fg-line">
+                                        <input type="text" class="form-control input-sm" id="" placeholder="John Doe">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                    <div class="fg-line">
+                                        <input type="email" class="form-control input-sm" id="" placeholder="johndoe@ownmail.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">No. Telepon</label>
+                                <div class="col-sm-10">
+                                    <div class="fg-line">
+                                        <input type="text" class="form-control input-sm" id="" placeholder="08xxxxxxxx">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Catatan <span class="c-brown">(opsional)</span></h2>
+                    </div>
+
+                    <div class="card-body card-padding">
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <textarea class="form-control" rows="2" placeholder="contoh: hai, brada! ini adalah link pembayaran untuk pembelian baju batik anda"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-10">
+                    <span class="f-700"><a href="somay.html" class="btn btn-warning">Kembali ke List</a></span>
+                    <span class="p-l-15 p-r-15">atau</span>
+                    <a data-toggle="modal" href="#modalDefault" class="btn btn-sm btn-primary">BUAT</a>
+                    <!-- Modal SoMAY -->
+                    <div class="modal fade" id="modalDefault" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="p-10 text-center bgm-green">
+                                        <h4 class="c-white">SoMAY Telah Berhasil Dibuat!!</h4>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="p-10">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-8">
+                                                <span class="c-success"><u>https://links.fasapay.co.id/py/C518rb</u></span>
+                                            </div>
+                                            <div class="col-sm-6 text-right col-xs-4">
+                                                <td><button class="btn btn-small btn-warning">Salin</button></td>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="row p-5">
+                                        <div class="col-sm-6 col-xs-5 text-left">
+                                            <a href="somay.html" class="btn btn-warning">Kembali ke List</a>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-7">
+                                            <a href="somay-form.html" class="btn btn-primary" data-dismiss="modal">Buat Lagi</a>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer id="footer">
+        Copyright &copy; 2018 Fasapay Indonesia
+
+        <ul class="f-menu">
+            <li><a href="#">Kebijakan</a></li>
+            <li><a href="#">Kerahasiaan</a></li>
+            <li><a href="#">Pencegahan Penipuan</a></li>
+            <li><a href="#">Perlindungan Pembeli</a></li>
+            <li><a href="#">Perlindungan Penjual</a></li>
+        </ul>
+    </footer>
+
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+
+    <!-- Javascript Libraries -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
