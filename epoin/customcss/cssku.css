@@ -1,3 +1,5 @@
+/*HOVER*/
+
 .tombol {
   float: left;
   margin: 0 5px 0 0;
@@ -22,7 +24,8 @@
 }
 
 .tombol input[type="radio"]:checked + label {
-  background: #ff9f1a;
+  background: #f96332;
+  color: white;
   border-radius: 4px;
 }
 
@@ -30,4 +33,69 @@
   cursor: pointer;
   z-index: 90;
   line-height: 1.8em;
+}
+
+/*FLOT*/
+.float{
+  position:fixed;
+  width:48px;
+  height:48px;
+  bottom:440px;
+  right:14px;
+  color:orange;
+  border-radius:5px;
+  text-align:center;
+  box-shadow: 2px 2px 6px #000;
+  font-size: 16px;
+  background: #fff;
+    background-size: cover;
+}
+
+.float2{
+  position:fixed;
+  width:48px;
+  height:48px;
+  bottom:390px;
+  right:14px;
+  color:green;
+  border-radius:5px;
+  text-align:center;
+  box-shadow: 2px 2px 6px #000;
+  font-size: 16px;
+  background: #fff;
+    background-size: cover;
+}
+
+.float3{
+  position:fixed;
+  width:48px;
+  height:48px;
+  bottom:340px;
+  right:14px;
+  color:  #3b5998;
+  border-radius:5px;
+  text-align:center;
+  box-shadow: 2px 2px 6px #000;
+  font-size: 16px;
+  background: #fff;
+    background-size: cover;
+}
+
+.float4{
+  position:fixed;
+  width:48px;
+  height:48px;
+  bottom:290px;
+  right:14px;
+  color:lime;
+  border-radius:5px;
+  text-align:center;
+  box-shadow: 2px 2px 6px #000;
+  font-size: 16px;
+  background: #fff;
+    background-size: cover;
+}
+
+.my-float{
+  margin-top:8px;
 }
