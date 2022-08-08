@@ -1,17 +1,17 @@
 @use 'custom';
 
 // IMPORT COMPONENTS 
-@use '../scss/components/animations';
-@use '../scss/components/buttons';
-@use '../scss/components/mixins';
-@use '../scss/components/typography';
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/mixins';
+@use 'components/typography';
 
 // IMPORT SECTIONS 
-@use '../scss/section/navbar';
-@use '../scss/section/intro';
-@use '../scss/section/produk';
-@use '../scss/section/metode';
-@use '../scss/section/pengaturan';
-@use '../scss/section/target';
-@use '../scss/section/faq';
-@use '../scss/section/footer';
+@use 'section/navbar';
+@use 'section/intro';
+@use 'section/produk';
+@use 'section/metode';
+@use 'section/pengaturan';
+@use 'section/target';
+@use 'section/faq';
+@use 'section/footer';

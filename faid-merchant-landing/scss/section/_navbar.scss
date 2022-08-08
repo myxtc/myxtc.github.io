@@ -1,0 +1,24 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.logo {
+    width: 130px;
+}
+
+.menu{
+    @include gradient;
+    
+    li{
+        padding: 0 0.7rem;
+
+        a{
+            color: $white!important;
+            font-weight: 600;
+            text-transform: capitalize;
+
+            &:hover{
+                border-bottom:2px solid $warning;
+            }
+        }
+    }
+}
