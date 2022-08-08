@@ -1,0 +1,21 @@
+{
+  "name": "faid-",
+  "version": "1.0.0",
+  "description": "project for faid landing page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss:assets/css"
+  },
+  "author": "goenrohas",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.2",
+    "autoprefixer": "^10.4.8",
+    "bootstrap": "^5.2.0",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0"
+  }
+}
