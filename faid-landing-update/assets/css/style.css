@@ -10862,7 +10862,7 @@ body {
 }
 
 .menu {
-  background: linear-gradient(to right, rgba(3, 79, 132, 0.15), rgba(3, 79, 132, 0.95));
+  background-color: #034f84;
 }
 .menu li {
   padding: 0 0.7rem;
