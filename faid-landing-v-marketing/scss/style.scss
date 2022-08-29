@@ -1,0 +1,16 @@
+@use 'custom';
+
+// IMPORT COMPONENTS 
+@use 'components/mixins';
+@use 'components/typography';
+@use 'components/buttons';
+
+// IMPORT SECTIONS 
+@use 'sections/splash';
+@use 'sections/navbar';
+@use 'sections/faq';
+@use 'sections/footer';
+@use 'sections/intro';
+@use 'sections/metode';
+@use 'sections/pengaturan';
+@use 'sections/produk';

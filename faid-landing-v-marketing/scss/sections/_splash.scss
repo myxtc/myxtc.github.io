@@ -1,0 +1,59 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+
+.start-page{  
+    @include gradient;  
+    padding-bottom: 5rem;
+
+    h1{
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size:x-large;
+
+        // img{
+        //     width: 110px;
+        // }
+    }
+
+    p{
+        margin-top: 1.2rem;
+        text-transform: capitalize;
+        font-size: large;
+    }
+
+    .opsi {
+        padding: 1rem 3rem;
+        color: $white;
+    
+        h1{
+            text-transform: capitalize;
+            margin-top: 3rem;
+        }
+        h2{
+            margin-bottom: 3rem;
+            font-size: small;
+            @include media-breakpoint-up(sm){
+                font-size:larger;
+            }
+        }
+        a{
+            color: $yellow;
+            text-decoration: none;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            font-weight: 800;            
+
+            &:hover{
+                background-color: $yellow-300;
+                color: $black;
+                border-color: $white;                
+            }
+        }
+    }
+
+    .copysplash{
+        font-size: 0.885rem;
+        color: $white;
+    }
+}

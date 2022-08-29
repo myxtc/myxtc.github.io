@@ -1,0 +1,25 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.produk {
+    // @include gradient;
+    background-color: $primary;
+    margin-top: 5rem;
+    padding: 5rem 0;
+
+    .display-2--intro{
+        margin-bottom: 5rem;
+    }
+
+    .card{
+        border: none;
+
+        .card-title{
+            margin-bottom: 3rem;
+        }
+
+        a{
+            color: $primary;
+        }
+    }
+}

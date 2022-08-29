@@ -1,0 +1,37 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.btn-rounded{
+    position: relative;
+    padding: 0.5rem 3.835rem 0.375rem 1.725rem;
+    margin: 0;
+    font-weight: 700;
+    border: 0.125rem solid rgba($white, 1);
+    background-color: $white;
+
+    span {
+        position: absolute;
+        background-color: $primary;
+        width: 2.15rem;
+        height: 2.15rem;
+        top: 49%;
+        right: 8px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+
+        i{
+            line-height: 2;
+            color: $white;
+            font-size: 1rem;
+        }
+    }
+
+    &:hover{
+        @include gradient;
+        color: $white;
+
+        span{
+            background-color: rgba($warning, 1);
+        }
+    }
+}
