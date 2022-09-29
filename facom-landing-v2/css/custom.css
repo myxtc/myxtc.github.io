@@ -60,4 +60,6 @@
 }
 
 
-
+.b-bottom {
+    border-bottom: 2px solid rgb(252,200,19);
+}
