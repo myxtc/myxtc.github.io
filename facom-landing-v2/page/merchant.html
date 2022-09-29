@@ -67,22 +67,26 @@
     
         <!-- Header -->
         <!-- ============================================= -->
-       <div class="header-floating header-floating-transparent menu-fixed-light menu-dark-mobiles xs-menu-wrapper-dark">
+        <div class="header-floating header-floating-transparent menu-fixed-light menu-dark-mobiles xs-menu-wrapper-dark">
             <div class="topbar topbar-transparent mt20 mb10">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-7 hidden-xs">
+                        <div class="col-sm-4 hidden-xs">
                             <p class="text-2 mb10 color-inherit">
-                                <span class="mr30"> &nbsp</span>
-                                <span> &nbsp</span>
+                                <span class="mr30"> &nbsp;</span>
+                                <span> &nbsp;</span>
                             </p>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-8">
                             <div class="clearfix">
                                 <div class="pull-right xs-pull-left">
                                     <a href="page/acc_login.html" class="btn-e btn-small">Login</a>
-                                    <span class="mr20"></span>
-                                    <a href="page/acc_reg.html" class="btn-bg rounded btn-small">Register</a>
+                                    <span class="mr10"></span>
+                                    <a href="page/acc_reg.html" class="btn-bg rounded btn-small">sign up</a>
+                                    <span class="mr10"></span>
+                                    <a href="../index.html">Personal</a>
+                                    <span class="mr10"></span>
+                                    <a href="page/merchant.html">Business</a>
                                 </div>
                             </div>
                         </div>
@@ -105,13 +109,12 @@
                                         <ul id="onepagenav" class="menu">
                                             <!-- Toggle Menu - For Mobile Devices -->
                                             <li class="toggle-menu"> <i class="icon icon_menu"></i></li>
-                                            <li class="current" onclick = $(".toggle-menu").click();><a href="#home">Home</a></li>       
-                                            <li onclick = $(".toggle-menu").click();><a href="#featumerch">Features</a></li>
-                                            <li onclick = $(".toggle-menu").click();><a href="#howitmerch">How It Works</a></li>
-                                            <li onclick = $(".toggle-menu").click();><a href="#home">Merchant</a></li>
-                                            <li><a href="../index.html">Personal</a></li>
-                                            <li onclick = $(".toggle-menu").click();><a href="http://www.multichat.pro/972717-fasapaycom" target="blank">F.A.Q</a></li>
-                                            <li onclick = $(".toggle-menu").click();><a href="#sitemapm">Sitemap</a></li>
+                                            <li class="current"><a href="#home">Home</a></li>
+                                            <li><a href="#features">Features</a></li>
+                                            <li><a href="#work">How It Work</a></li>
+                                            <li><a href="#footer">Details</a></li>
+                                            <!-- <li><a href="http://www.multichat.pro/972717-fasapaycom" target="blank">F.A.Q</a></li>
+                                            <li><a href="#sitemap">Sitemap</a></li> -->
                                         </ul>
                                     </nav>
                                 </div>
@@ -311,7 +314,7 @@
                 </div>           
         </section>
 
-        <!-- Statistic -->
+        <!-- Statistic 
        <section class="section-bg m0 section-extra-large bg-img stellar bg41 stats-section stats-bg" data-stellar-background-ratio="0.4">
             <div class="bg-overlay gradient-2"></div>
             <div class="container">
@@ -348,9 +351,7 @@
                 <span class="mr10"></span><a href="acc_reg.html" class="btn-slider square btn-small">Register</a>
             </div>
         </section>
-        <!-- /Statisic -->
-
-        <!-- Testimoni-->
+        
         <section class="section section-white mt20">
             <div class="container">
                 <div class="pt65"></div>
@@ -417,8 +418,8 @@
         <!-- Testimoni-->     
         
         <!-- Footer -->
-        <!-- ============================================= -->
-        <section id="sitemapm" class="bg-dark">
+        <div  id="footer" class="container"></div>
+        <section class="bg-dark p-b-10">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -440,15 +441,16 @@
                                 <li>
                                     <!-- widgets list -->
 
-                                    <h5 class="color-white tl30">Legal Protection</h5>
+                                    <h5 class="color-white tl30"><strong>Legal Statements</strong></h5>
 
-                                    <ul >
-                                        <li><a href="../page/tnc.html"> Term and Condition</a></li>
-                                        <li><a href="../page/servicelevel.html"> Service Level Agreement</a></li>
-                                        <li><a href="../page/privacy.html"> Privacy</a></li>
-                                        <li><a href="../page/fprevent.html"> Fraud Prevention</a></li>
-                                        <li><a href="../page/protsell.html"> Merchant Protection</a></li>
-                                        <li><a href="../page/protbuy.html"> Buyer Protection</a></li>
+                                    <ul>
+                                        <li><a href="page/tnc.html">Personal Terms and Conditions</a></li>
+                                        <li><a href="page/tnc-m.html">Merchant Terms and Conditions</a></li>
+                                        <li><a href="page/servicelevel.html"> Service Level Agreement</a></li>
+                                        <li><a href="page/privacy.html"> Privacy</a></li>
+                                        <li><a href="page/fprevent.html"> Fraud Prevention</a></li>
+                                        <li><a href="page/protsell.html"> Merchant Protection</a></li>
+                                        <li><a href="page/protbuy.html"> Buyer Protection</a></li>
                                     </ul>
 
                                 </li>
@@ -467,42 +469,40 @@
                                 <li>
                                     <!-- widgets list -->
 
-                                    <h5 class="color-white tl30">Features Detail</h5>
+                                    <h5 class="color-white tl30"><strong>Features</strong></h5>
 
                                     <ul>
-                                        <li><a href="../page/feature.html"> Fee, Limit & Features</a></li>
-                                        <li><a href="../page/flexibelbank.html"> Banking Support </a></li>
-                                        <li><a href="../page/mobilapp.html"> Mobile Aps</a></li>
-                                        <li><a href="../page/sec.html"> Security</a></li>
-                                        <li><a href="../page/referral.html"> Referral System</a></li>
+                                        <li><a href="#"> Fee</a></li>
+                                        <li><a href="#"> Limit</a></li>
+                                        <li><a href="page/flexibelbank.html"> Banking Support </a></li><!-- 
+                                        <li><a href="page/mobilapp.html"> Mobile Aps</a></li> -->
+                                        <li><a href="page/sec.html"> Security</a></li>
+                                        <li><a href="page/referral.html"> Referral System</a></li>
                                     </ul>
 
                                 </li>
 
-                            </ul>
+                            </ul>                            
 
                         </div>
                         <!-- widgets column left end -->
 
                         <div class="col-lg-3 col-md-3 color-white">
                             <!-- widgets column left -->
-                            <h5 class="color-white tl20"> Company: </h5>
+                            <h5 class="color-white tl20"><strong>Office Hours:</strong> </h5>
 
                             <div style="margin-left:20px;">
-
-                                <h5 class="color-white" >Fasa Centra Solutions Ltd</h5>
-                                <p>Email : <a href="mailto:info@webenlance.com">support@fasapay.com</a></p>
-                                <p><b>HOTLINE:</b>
-                                    <br>( <b style="color:gold;">Monday - Friday : 09.00 AM to 10.00 PM GMT+8 </b> )
-                                    <br>( <b style="color:gold;">Saturday: 09.00 AM to 01.00 PM GMT+8</b> )
+                                <p>HOTLINE:
+                                    <br>( Monday - Friday : 09.00 AM to 10.00 PM GMT+8 )
+                                    <br>( Saturday: 09.00 AM to 01.00 PM GMT+8 )
                                 </p>                                    
                                 <p>
                                     Phone: &nbsp; <i class="fa fa-phone-square"></i> &nbsp; +60 3 2726 2770 
                                 </p>
-                                <p>
+                                <!-- <p>
                                     Fax: &nbsp; <i class="fa fa-fax"></i> &nbsp; +60 3 2726 2771
-                                </p>
-                                    
+                                </p> -->
+                                <p>Email : <a href="mailto:info@webenlance.com">support@fasapay.com</a></p>
                             </div>
 
                         </div>
@@ -510,26 +510,38 @@
 
                         <div class="col-lg-3 col-md-3 color-white">
                             <div class="tl20">
-                                <h5 class="color-white">Office Address:</h5>
-                                <div>
-                                    Aspin Commercial Tower,
-                                <br>Sheikh Zayed Road, Floor 44,
-                                <br>Office 18, Dubai, UAE
-                                <br>PO-BOX: 62338
-                                </div>
+                                <h5 class="color-white" ><strong>Office Address</strong></h5>
+                                    <div class="box-services-2">
+                                        <div class="box-left">
+                                            <img src="../images/flag-uea.png" alt="">
+                                        </div>
+                                        <div class="box-right">
+                                            <p class="mb0">
+                                                Aspin Commercial Tower,
+                                                Sheikh Zayed Road, Floor 44,
+                                                Office 18, Dubai, UAE
+                                                PO-BOX: 62338
+                                            </p>
+                                        </div>
+                                    </div>
 
-                                <div m-t-2><strong>And</strong></div>
-
-                                <div>
-                                    B-5-8 Plaza Mont Kiara
-                                    <br>Mont Kiara 50480
-                                    <br>Kuala Lumpur, Malaysia
-                                </div>
+                                    <div class="box-services-2">
+                                        <div class="box-left">
+                                            <img src="../images/flag-mly.png" alt="">
+                                        </div>
+                                        <div class="box-right">
+                                            <p class="mb0">
+                                                B-5-8 Plaza Mont Kiara
+                                                Mont Kiara 50480
+                                                Kuala Lumpur, Malaysia
+                                            </p>
+                                        </div>
+                                    </div>
                             </div>                         
                             
                             <!-- social media -->
-                            <div class="m-t-10 tl10">
-                                <h5 class="color-white tl30">Follow Us on:</h5>
+                            <div class="mt40 ml10">
+                                <h5 class="color-white ml10">Follow Us on:</h5>
                             </div>
                             <div class="tl20">                                
                                 <a href="#" target="blank"><i class="fa-brands fa-tiktok fa-3x"></i></a>&nbsp;
@@ -556,6 +568,7 @@
                 </div>
             </footer>
         </section>
+        <!-- /Footer -->
     
     <!-- END Global Wrapper -->
 
